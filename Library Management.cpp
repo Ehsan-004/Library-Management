@@ -94,7 +94,7 @@ void Book::SaveDetails()
 {
 	fstream file;
 
-	file.open("C:/C++/file.txt", ios::app | ios::out);
+	file.open("C:/C++/books.txt", ios::app | ios::out);
 
 	if (!file)
 		cout << "error while opening file ";
@@ -194,7 +194,7 @@ void search(int which)
 {
 	Book ins;
 	fstream file;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 	file.seekp((which - 1) * (sizeof(Book)));
 	file.read((char*)&ins, sizeof(Book));
 	ins.PrintDetails();
@@ -206,7 +206,7 @@ void search_by_name(string name)
 {
 	Book ins;
 	fstream file;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 
 	bool flag = true;
 	int counter = 0;
@@ -237,7 +237,7 @@ void search_by_auther(string name)
 {
 	Book ins;
 	fstream file;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 	bool flag = true;
 	int counter = 0;
 
@@ -381,7 +381,7 @@ void prise_details()
 
 	Book ins;
 	fstream file;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 	int sum = 0;
 	int counter = 0;
 	int max = 0, min = 0;
@@ -397,7 +397,7 @@ void prise_details()
 	file.close();
 
 
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 
 	while (file.seekp(counter * sizeof(Book)) && file.read((char*)&ins, sizeof(Book)))
 	{
@@ -444,7 +444,7 @@ void all_details()
 	fstream file;
 	Book ins;
 	int counter = 0;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 
 	while (file.seekp(counter * sizeof(Book)) && file.read((char*)&ins, sizeof(Book)))
 	{
@@ -463,7 +463,7 @@ void edit()
 	Book ins;
 	int code;
 
-	file.open("C:/C++/file.txt", ios::binary | ios::in | ios::out);
+	file.open("C:/C++/books.txt", ios::binary | ios::in | ios::out);
 
 	system("cls");
 	cout << "\t\t  ----------------------------------------------------------------------------\t\t\t\n\n";
@@ -520,7 +520,7 @@ void delet_panel()
 		switch (ch)
 		{
 		case 'y':
-			remove("C:/C++/file.txt");
+			remove("C:/C++/books.txt");
 			cout << "\n\n\n\t\t\t   all books deleted succesfully !        ";
 			_getch();
 		default:
@@ -544,13 +544,13 @@ void del()
 	int code;
 
 	int counter = 0;
-	file.open("C:/C++/file.txt", ios::binary | ios::in);
+	file.open("C:/C++/books.txt", ios::binary | ios::in);
 
 	while (file.seekp(counter * sizeof(Book)) && file.read((char*)&ins, sizeof(Book)))
 		counter++;
 	file.close();
 
-	file.open("C:/C++/file.txt", ios::binary | ios::in | ios::out);
+	file.open("C:/C++/books.txt", ios::binary | ios::in | ios::out);
 	cout << "enter code of the book";
 	cin >> code;
 
