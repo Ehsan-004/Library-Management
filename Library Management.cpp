@@ -123,7 +123,7 @@ void print_main_menu()
 	string wellcome_lone_1 = "\t\t\t      [1]go to panel                               [2]search between books\n\n\n";
 	string wellcome_lone_2 = "\t\t\t      [3]see prise details                         [4]all books\n\n\n";
 	string wellcome_lone_3 = "\t\t\t      [5]edit a book                               [6]delet a book\n\n\n";
-	string wellcome_lone_4 = "\t\t\t      [7]exit                                      [8]\n\n\n";
+	string wellcome_lone_4 = "\t\t\t      [7]help                                      [8]exit\n\n\n";
 	string wellcome_lone_5 = "\t\t  -------------------------------------------------------------------------------\t\t\t\n";
 
 	cout << wellcome_lone_0 << wellcome_lone_1 << wellcome_lone_2 << wellcome_lone_3 << wellcome_lone_4 << wellcome_lone_5;
@@ -147,6 +147,20 @@ void print_delet()
 	string s2 = "\n\t\t\t      [3]bacmk to previous menu                     \n\n\n";
 
 	cout << s1 << s2;
+}
+//###############################################################################################################################################
+void print_help()
+{
+	system("cls");
+	string help0 = "\n\n";
+	string help1 = "\t\t\t      to enter info of a book go to panel in [1].then enter details in [1]\n\n\n";
+	string help2 = "\t\t\t      you can see and check if details are correct in [3]\n\n\n";
+	string help3 = "\t\t\t      to save the book to memory enter [2]\n\n\n";
+	string help4 = "\t\t\t      other guides will be coming soon ...\n\n\n";
+
+	cout << help0 << help1 << help2 << help3 << help4;
+	_getch();
+	main_menu();
 }
 //###############################################################################################################################################
 //(search penel) it shows the ways to search a book like by name or code or ...                                                   searching panel
@@ -606,6 +620,8 @@ void main_menu()
 		delet_panel();
 		break;
 	case'7':
+		print_help();
+	case'8':
 		exit(0);
 	default:
 		main_menu();
