@@ -57,37 +57,23 @@ public:
 //this method recieves the info from user                                                                                  ###enter set method###
 void Book::EnterDetails()
 {
-	//string name_of_book, autehr;
-
-	//cout << "\n\t\t\t\t\tbooks allow you live ...\n\n";
 	cout << "\n\n\t\t  ----------------------------------------------------------------------------\t\t\t\n\n";
 	cout << "\t\t\t      name of book :                               \b";
 	cin >> NameOfBook;
-	//cin >> name_of_book;
 
 	cout << "\t\t\t      name of auther :                             \b";
 	cin >> Auther;
-	//cin >> autehr;
-
+	
 	cout << "\t\t\t      prise of book :                              \b";
 	cin >> Prise;
 
 	cout << "\t\t\t      version of book :                            \b";
 	cin >> Version;
-
-
-	//strncpy_s(NameOfBook, name_of_book.c_str(), sizeof(NameOfBook));
-	//strncpy_s(Auther, autehr.c_str(), sizeof(Auther));
-
-	//NameOfBook[14] = '\0';
-	//Auther[14] = '\0';
-
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //it saves the detail in a file                                                                                                ###print method###
 void Book::PrintDetails()
 {
-	//cout << "\n\t\t\t\t\tbooks allow you live ...\n\n";
 	cout << "\n\n\t\t  ----------------------------------------------------------------------------\t\t\t\n\n";
 	cout << "\t\t\t      name of book :                               \b";
 	for (int i = 0; NameOfBook[i]; i++)cout << NameOfBook[i];
@@ -106,7 +92,6 @@ void Book::PrintDetails()
 //this one moves the entered data to the file in memory                                                                         ###save method###
 void Book::SaveDetails()
 {
-	//system("cls");
 	fstream file;
 
 	file.open("C:/C++/file.txt", ios::app | ios::out);
@@ -245,25 +230,6 @@ void search_by_name(string name)
 			file.close();
 		}
 	}
-
-
-
-	//while (flag)
-	//{
-	//	file.seekp(counter * (sizeof(Book)));
-	//	file.read((char*)&ins, sizeof(Book));
-
-	//	if (ins.NameOfBook == name)
-	//	{
-	//		ins.PrintDetails();
-	//		flag = false;
-	//		break;
-	//	}
-	//	counter++;
-	//	
-	//	if (counter == 40)
-	//		file.close();
-	//}
 }
 //############################################################################################################################################### 
 // this one searches bt name of auther                                                                                           search by auther
@@ -652,25 +618,3 @@ int main()
 	system("cls");
 	main_menu();
 }
-
-
-
-
-
-/*
-
-
-fstream file;
-	Book ins;
-	int counter = 0;
-
-	file.open("c:/c++/file.txt", ios::binary | ios::in);
-
-	while (file.seekp(counter * sizeof(Book)) && file.read((char*)&ins, sizeof(Book)))
-		counter++;
-	file.close();
-
-	cout << "counter is " << counter << endl;
-
-
-*/
